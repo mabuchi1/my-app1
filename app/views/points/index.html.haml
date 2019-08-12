@@ -1,0 +1,8 @@
+.wrapper
+  =render 'shared/side'
+  =render 'point', collection: @points
+  .input
+    = form_for [@group, @point] do |f|
+      .input-box
+        =f.text_field :point, value: 0
+      = f.submit 'Send', class: 'send'
