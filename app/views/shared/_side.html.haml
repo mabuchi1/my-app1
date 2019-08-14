@@ -16,28 +16,44 @@
         .group__name
           = group.name
 .point__from
-  %form
+  %form#button
     %table.point__from-table
       %tr
-        %td{colspan: "3"} 得点入力
-        %td.red c
+        %td{colspan: "4"} 得点入力
       %tr
-        %td 7
-        %td 8
-        %td 9
-        %td ÷
+        %td
+          %input#calc{:type => "button", :value => "7"}
+        %td 
+          %input#calc{:type => "button", :value => "8"}
+        %td 
+          %input#calc{:type => "button", :value => "9"}
+        %td 
+          %input#calc{:type => "button", :value => "÷"}
       %tr
-        %td 4
-        %td 5
-        %td 6
-        %td ×
+        %td 
+          %input#calc{:type => "button", :value => "4"}
+        %td 
+          %input#calc{:type => "button", :value => "5"}
+        %td 
+          %input#calc{:type => "button", :value => "6"}
+        %td 
+          %input#calc{:type => "button", :value => "×"}
       %tr
-        %td 1
-        %td 2
-        %td 3
-        %td -
+        %td 
+          %input#calc{:type => "button", :value => "1"}
+        %td 
+          %input#calc{:type => "button", :value => "2"}
+        %td 
+          %input#calc{:type => "button", :value => "3"}
+        %td 
+          %input#calc{:type => "button", :value => "-"}
       %tr
-        %td 0
-        %td ･
-        %td =
-        %td +
+        %td 
+          %input#calc{:type => "button", :value => "0"}
+        %td.red 
+          %input#calc{:type => "button", :value => "C"}
+        %td 
+          %input#calc{:type => "button", :value => "="}
+        %td 
+          %input#calc{:type => "button", :value => "+"}
+

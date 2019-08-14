@@ -4,6 +4,21 @@ class PointsController < ApplicationController
   def index
     @point = Point.new
     @points = @group.points.includes(:user)
+    group = @group.id
+    @group_id = GroupUser.where(group_id: group)
+    @p_point = Point.where(group_id: group)
+    @g_name = []
+    @p_id = []
+    @p_name = []
+    @p_p = []
+    @group_id.each do |id|
+      @g_name << id.user.name
+    end
+    @p_point.each do |p|
+      @p_p << p.point
+      @p_id << p.user_id
+      @p_name << p.user.name
+    end
   end
 
   def create
