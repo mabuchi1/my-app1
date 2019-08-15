@@ -11,12 +11,11 @@ class PointsController < ApplicationController
     @p_id = []
     @p_name = []
     @p_p = []
+
     @group_id.each do |id|
       @g_name << id.user.name
     end
     @p_point.each do |p|
-      @p_p << p.point
-      @p_id << p.user_id
       @p_name << p.user.name
     end
   end
@@ -27,8 +26,7 @@ class PointsController < ApplicationController
       redirect_to group_points_path(@group), notice: '得点が送信されました'
     else
       @points = @group.points.includes(:user)
-      flash.now[:alert] = '得点を入力してください'
-      render :index
+      redirect_to group_points_path(@group), notice: '得点を入力してください'
     end
   end
 
