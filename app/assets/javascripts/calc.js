@@ -1,8 +1,14 @@
   $(function(){
+    var result = document.getElementById("result");
 
-
-  $("input").on('click', function(){
-  console.log(this);
+  $("#calc").on('click', function(){
+    a = $(this).val();
+    console.log(a)
+      if (a == "="){
+        result.value = ("return " + result.value)
+      }else{
+        result.value = result.value + a;
+      }   
     });
   $("#result")
   });
