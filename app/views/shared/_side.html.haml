@@ -5,7 +5,7 @@
   %ul.header--btn
     %li{class: "header--btn__log"}
       = link_to destroy_user_session_path, method: :delete do
-        Rog_out
+        Log_out
     %li.header--btn__create
       = link_to new_group_path do
         Group_create
@@ -15,44 +15,3 @@
       = link_to group_points_path(group) do
         .group__name
           = group.name
-.point__from
-  %form#button
-    %table.point__from-table
-      %tr
-        %td{colspan: "4"} 得点入力
-      %tr
-        %td
-          %input{:type => "button", :value => "7", class: "calc"}
-        %td 
-          %input{:type => "button", :value => "8", class: "calc"}
-        %td 
-          %input{:type => "button", :value => "9", class: "calc"}
-        %td 
-          %input{:type => "button", :value => "÷", class: "calc"}
-      %tr
-        %td 
-          %input{:type => "button", :value => "4", class: "calc"}
-        %td 
-          %input{:type => "button", :value => "5", class: "calc"}
-        %td 
-          %input{:type => "button", :value => "6", class: "calc"}
-        %td 
-          %input{:type => "button", :value => "×", class: "calc"}
-      %tr
-        %td 
-          %input{:type => "button", :value => "1", class: "calc"}
-        %td 
-          %input{:type => "button", :value => "2", class: "calc"}
-        %td 
-          %input{:type => "button", :value => "3", class: "calc"}
-        %td 
-          %input{:type => "button", :value => "-", class: "calc"}
-      %tr
-        %td 
-          %input{:type => "button", :value => "0", class: "calc"}
-        %td.red 
-          %input{:type => "button", :value => "C", class: "calc"}
-        %td 
-          %input{:type => "button", :value => "=", id: "calc"}
-        %td 
-          %input{:type => "button", :value => "+", class: "calc"}

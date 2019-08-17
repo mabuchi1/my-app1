@@ -1,3 +1,44 @@
+.point__from
+  %form#button
+    %table.point__from-table
+      %tr
+        %td{colspan: "4"} 得点入力
+      %tr
+        %td
+          %input{:type => "button", :value => "7", class: "val"}
+        %td 
+          %input{:type => "button", :value => "8", class: "val"}
+        %td 
+          %input{:type => "button", :value => "9", class: "val"}
+        %td 
+          %input{:type => "button", :value => "/", class: "calc"}
+      %tr
+        %td 
+          %input{:type => "button", :value => "4", class: "val"}
+        %td 
+          %input{:type => "button", :value => "5", class: "val"}
+        %td 
+          %input{:type => "button", :value => "6", class: "val"}
+        %td 
+          %input{:type => "button", :value => "*", class: "calc"}
+      %tr
+        %td 
+          %input{:type => "button", :value => "1", class: "val"}
+        %td 
+          %input{:type => "button", :value => "2", class: "val"}
+        %td 
+          %input{:type => "button", :value => "3", class: "val"}
+        %td 
+          %input{:type => "button", :value => "-", class: "calc"}
+      %tr
+        %td 
+          %input{:type => "button", :value => "0", class: "val"}
+        %td.red 
+          %input{:type => "button", :value => "C", class: "calc"}
+        %td 
+          %input{:type => "button", :value => "=", class: "calc"}
+        %td 
+          %input{:type => "button", :value => "+", class: "calc"}
 .content
   .content__header
     .content__header-name 
@@ -10,42 +51,116 @@
         = @g_name[0]
       %ul.content-player__name__point
         - @points.each do |point|
-          -if point.user.name == @g_name[0] 
+          -if point.user.name == @g_name[0]
+            - @res1 += point.point
             %li
               = point.point
+        - @rank << @res1
       %ul.content-player__name__result
-        %li.content-player__1-result result:
-        %li.content-player__1-rank rank:
-    .content-player__name
+        result:
+        %li.content-player__name__result__1
+          = @res1
+    .content-player__name1
       .content-player__name__box
         = @g_name[1]
       .content-player__name__point
         - @points.each do |point|
-          -if point.user.name == @g_name[1] 
+          -if point.user.name == @g_name[1]
+            - @res2 += point.point
             %li
               = point.point
+        - @rank << @res2
       %ul.content-player__name__result
-        %li.content-player__2-result result:
-        %li.content-player__2-rank rank:
-    .content-player__name
+        result:
+        %li.content-player__name__result__1
+          = @res2
+    .content-player__name2
       .content-player__name__box
         = @g_name[2]
       .content-player__name__point
         - @points.each do |point|
           -if point.user.name == @g_name[2] 
+            - @res3 += point.point
             %li
               = point.point
+        - @rank << @res3
       %ul.content-player__name__result
-        %li.content-player__3-result result:
-        %li.content-player__3-rank rank:
-    .content-player__name
+        result:
+        %li.content-player__name__result__1
+          = @res3
+    .content-player__name3
       .content-player__name__box
         = @g_name[3]
       .content-player__name__point
         - @points.each do |point|
-          -if point.user.name == @g_name[3] 
+          -if point.user.name == @g_name[3]
+            - @res4 += point.point
             %li
               = point.point
+        - @rank << @res4
       %ul.content-player__name__result
-        %li.content-player__4-result result:
-        %li.content-player__4-rank rank:
+        result:
+        %li.content-player__name__result__1
+          = @res4
+
+- @rank.sort!
+.contenta
+  %li.contenta-a
+    rank:
+    .content-player__name__result__1
+      - if (@rank[3] == @res1 && @flag == 0)
+        = @one
+        - @flag = 1
+      - if (@rank[2] == @res1 && @flag == 0)
+        = @two
+        - @flag = 1
+      - if (@rank[1] == @res1 && @flag == 0)
+        = @three
+        - @flag = 1
+      - if (@rank[0] == @res1 && @flag == 0)
+        = @four
+  %li.contenta-a
+    rank:
+    .content-player__name__result__1
+      - @flag = 0
+      - if (@rank[3] == @res2 && @flag == 0)
+        = @one
+        - @flag = 1
+      - if (@rank[2] == @res2 && @flag == 0)
+        = @two
+        - @flag = 1
+      - if (@rank[1] == @res2 && @flag == 0)
+        = @three
+        - @flag = 1
+      - if (@rank[0] == @res2 && @flag == 0)
+        = @four
+  %li.contenta-a
+    rank:
+    .content-player__name__result__1
+      - @flag = 0
+      - if (@rank[3] == @res3 && @flag == 0)
+        = @one
+        - @flag = 1
+      - if (@rank[2] == @res3 && @flag == 0)
+        = @two
+        - @flag = 1
+      - if (@rank[1] == @res3 && @flag == 0)
+        = @three
+        - @flag = 1
+      - if (@rank[0] == @res3 && @flag == 0)
+        = @four
+  %li.contenta-a
+    rank:
+    .content-player__name__result__1
+      - @flag = 0
+      - if (@rank[3] == @res4)
+        = @one
+        - @flag = 1
+      - if (@rank[2] == @res4 && @flag == 0)
+        = @two
+        - @flag = 1
+      - if (@rank[1] == @res4 && @flag == 0)
+        = @three
+        - @flag = 1
+      - if (@rank[0] == @res4 && @flag == 0)
+        = @four

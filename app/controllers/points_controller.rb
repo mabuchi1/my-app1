@@ -8,13 +8,22 @@ class PointsController < ApplicationController
     @group_id = GroupUser.where(group_id: group)
     @p_point = Point.where(group_id: group)
     @g_name = []
-    @p_id = []
     @p_name = []
-    @p_p = []
+    @rank = []
+    @res1 = 0
+    @res2 = 0 
+    @res3 = 0
+    @res4 = 0
+    @one = 1
+    @two = 2
+    @three = 3
+    @four = 4
+    @flag = 0
 
     @group_id.each do |id|
       @g_name << id.user.name
     end
+    
     @p_point.each do |p|
       @p_name << p.user.name
     end
