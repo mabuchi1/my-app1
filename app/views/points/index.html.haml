@@ -4,5 +4,5 @@
   .input
     = form_for [@group, @point] do |f|
       .input-box
-        =f.text_field :point, id: "result" ,maxlength: 8
+        =f.text_field :point, id: "result", maxlength: 8, readonly: "readonly"
         = f.submit 'Send', id: 'send'
