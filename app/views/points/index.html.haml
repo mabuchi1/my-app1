@@ -2,7 +2,7 @@
   =render 'shared/side'
   =render 'point'
   .input
-    = form_for [@group, @point] do |f|
+    = form_for [@group, @point],html:{id: :new_point} do |f|
       .input-box
-        =f.text_field :point, id: "result", maxlength: 8, readonly: "readonly"
-        = f.submit 'Send', id: 'send'
+        =f.text_field :point, id: "result", maxlength: 8, readonly: "readonly", value: "0"
+        = f.submit 'Send', class: 'send'

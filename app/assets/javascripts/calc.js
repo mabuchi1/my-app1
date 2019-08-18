@@ -6,7 +6,7 @@ var result = 0;
 $(function(){
   $(".val").on('click', function(){
     var a = $(this).val();
-    if (a >= 1 && a <=9){
+    if (a >= 0 && a <=9){
       flag = 0 ;
       input += a;
       document.getElementById("result").value = input
@@ -24,7 +24,8 @@ $(function(){
       }
       if(a == "=" && flag == 1){
         calc = "+";
-      }else{
+      }
+      if(a == "+" && flag == 1 || a == "-" && flag == 1 || a == "*" && flag == 1 || a == "/" && flag == 1 ){
         calc = a;
       }
       if(a == "C"){
@@ -34,4 +35,8 @@ $(function(){
         document.getElementById("result").value = result
       }
     });
+
+  $("#new_point").on('submit', function(e){
+    input = "";
+  })
   });

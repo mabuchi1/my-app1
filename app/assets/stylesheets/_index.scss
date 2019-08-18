@@ -101,9 +101,8 @@
       height: calc(100vh - 260px);
       width: 25%;
       border-right: 1px solid #000000;
-      overflow: scroll;
-      &__point{
-        min-height: 370px;
+      &__point, &__point1, &__point2, &__point3{
+        height: 370px;
         text-align: left; 
         padding: 10px 0 0 10px;
         overflow: scroll;
@@ -113,13 +112,13 @@
         padding-top: 10px;
         height: 50px;
       }
-      &__result{
+      &__result, &__result1, &__result2, &__result3{
       border-top: 1px solid #000000;
       height: 50px;
       text-align: left;
       padding: 10px 0 0 10px;
       overflow: scroll;
-      &__1{
+      &__1,&__3,&__2,&__0,&__1a,&__1b,&__1c,&__1d{
         display: inline;
         font-size: 18px;
       }

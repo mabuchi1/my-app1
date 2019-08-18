@@ -49,65 +49,56 @@
     .content-player__name
       .content-player__name__box
         = @g_name[0]
-      %ul.content-player__name__point
+      .content-player__name__point
         - @points.each do |point|
           -if point.user.name == @g_name[0]
-            - @res1 += point.point
-            %li
+            %li.point
               = point.point
-        - @rank << @res1
       %ul.content-player__name__result
         result:
-        %li.content-player__name__result__1
+        %li.content-player__name__result__0
           = @res1
     .content-player__name1
       .content-player__name__box
         = @g_name[1]
-      .content-player__name__point
+      .content-player__name__point1
         - @points.each do |point|
           -if point.user.name == @g_name[1]
-            - @res2 += point.point
-            %li
+            %li.point
               = point.point
-        - @rank << @res2
-      %ul.content-player__name__result
+      %ul.content-player__name__result1
         result:
         %li.content-player__name__result__1
           = @res2
     .content-player__name2
       .content-player__name__box
         = @g_name[2]
-      .content-player__name__point
+      .content-player__name__point2
         - @points.each do |point|
           -if point.user.name == @g_name[2] 
-            - @res3 += point.point
-            %li
+            %li.point
               = point.point
-        - @rank << @res3
-      %ul.content-player__name__result
+      %ul.content-player__name__result2
         result:
-        %li.content-player__name__result__1
+        %li.content-player__name__result__2
           = @res3
     .content-player__name3
       .content-player__name__box
         = @g_name[3]
-      .content-player__name__point
+      .content-player__name__point3
         - @points.each do |point|
           -if point.user.name == @g_name[3]
-            - @res4 += point.point
-            %li
+            %li.point
               = point.point
-        - @rank << @res4
-      %ul.content-player__name__result
+      %ul.content-player__name__result3
         result:
-        %li.content-player__name__result__1
+        %li.content-player__name__result__3
           = @res4
-
-- @rank.sort!
+-@rank.sort!
 .contenta
-  %li.contenta-a
+  %li.contenta-a1
     rank:
-    .content-player__name__result__1
+    .content-player__name__result__1a
       - if (@rank[3] == @res1 && @flag == 0)
         = @one
         - @flag = 1
@@ -119,9 +110,9 @@
         - @flag = 1
       - if (@rank[0] == @res1 && @flag == 0)
         = @four
-  %li.contenta-a
+  %li.contenta-a2
     rank:
-    .content-player__name__result__1
+    .content-player__name__result__1b
       - @flag = 0
       - if (@rank[3] == @res2 && @flag == 0)
         = @one
@@ -134,9 +125,9 @@
         - @flag = 1
       - if (@rank[0] == @res2 && @flag == 0)
         = @four
-  %li.contenta-a
+  %li.contenta-a3
     rank:
-    .content-player__name__result__1
+    .content-player__name__result__1c
       - @flag = 0
       - if (@rank[3] == @res3 && @flag == 0)
         = @one
@@ -149,11 +140,11 @@
         - @flag = 1
       - if (@rank[0] == @res3 && @flag == 0)
         = @four
-  %li.contenta-a
+  %li.contenta-a4
     rank:
-    .content-player__name__result__1
+    .content-player__name__result__1d
       - @flag = 0
-      - if (@rank[3] == @res4)
+      - if (@rank[3] == @res4 && @flag == 0)
         = @one
         - @flag = 1
       - if (@rank[2] == @res4 && @flag == 0)
