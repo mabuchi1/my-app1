@@ -6,7 +6,6 @@ class PointsController < ApplicationController
     @points = @group.points.includes(:user)
     group = @group.id
     @group_id = GroupUser.where(group_id: group)
-    @p_point = Point.where(group_id: group)
     @g_name = []
     @p_name = []
     @rank = []
@@ -19,6 +18,7 @@ class PointsController < ApplicationController
     gon.three = @three = 3
     gon.four = @four = 4
     gon.flag = @flag = 0
+    @user_id = ""
 
     @group_id.each do |id|
       @g_name << id.user.name
@@ -30,15 +30,23 @@ class PointsController < ApplicationController
 
     @points.each do |point|
       if point.user.name == @g_name[0]
+        @user_id = point.user.id
+        @p_id = point.id
         @res1 += point.point
       end
       if point.user.name == @g_name[1]
+        @user1_id = point.user.id
+        @p_id1 = point.id
         @res2 += point.point
       end
       if point.user.name == @g_name[2]
+        @user2_id = point.user.id
+        @p_id2 = point.id
         @res3 += point.point
       end
       if point.user.name == @g_name[3]
+        @user3_id = point.user.id
+        @p_id3 = point.id
         @res4 += point.point
       end
     end
@@ -58,9 +66,6 @@ class PointsController < ApplicationController
     gon.res3 = @res3
     gon.res4 = @res4
     
-    @p_point.each do |p|
-      @p_name << p.user.name
-    end
   end
 
   def create

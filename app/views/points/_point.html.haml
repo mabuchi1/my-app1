@@ -1,94 +1,54 @@
-.point__from
-  %form#button
-    %table.point__from-table
-      %tr
-        %td{colspan: "4"} 得点入力
-      %tr
-        %td
-          %input{:type => "button", :value => "7", class: "val"}
-        %td 
-          %input{:type => "button", :value => "8", class: "val"}
-        %td 
-          %input{:type => "button", :value => "9", class: "val"}
-        %td 
-          %input{:type => "button", :value => "/", class: "calc"}
-      %tr
-        %td 
-          %input{:type => "button", :value => "4", class: "val"}
-        %td 
-          %input{:type => "button", :value => "5", class: "val"}
-        %td 
-          %input{:type => "button", :value => "6", class: "val"}
-        %td 
-          %input{:type => "button", :value => "*", class: "calc"}
-      %tr
-        %td 
-          %input{:type => "button", :value => "1", class: "val"}
-        %td 
-          %input{:type => "button", :value => "2", class: "val"}
-        %td 
-          %input{:type => "button", :value => "3", class: "val"}
-        %td 
-          %input{:type => "button", :value => "-", class: "calc"}
-      %tr
-        %td 
-          %input{:type => "button", :value => "0", class: "val"}
-        %td.red 
-          %input{:type => "button", :value => "C", class: "calc"}
-        %td 
-          %input{:type => "button", :value => "=", class: "calc"}
-        %td 
-          %input{:type => "button", :value => "+", class: "calc"}
+= render 'points/p_form'
 .content
   .content__header
-    .content__header-name 
+    .content__header-name{data: {id: @group.id}}
       = @group.name
     = link_to edit_group_path(@group) do
       .content__header-name-group Group_Edit
   .content-player
-    .content-player__name
+    .content-player__name{data: {user_name: @g_name[0]}}
       .content-player__name__box
         = @g_name[0]
       .content-player__name__point
         - @points.each do |point|
           -if point.user.name == @g_name[0]
-            %li.point
+            %li.point{data: {point: @p_id, user_id: @user_id}}
               = point.point
       %ul.content-player__name__result
         result:
         %li.content-player__name__result__0
           = @res1
-    .content-player__name1
+    .content-player__name1{data: {user_name: @g_name[1]}}
       .content-player__name__box
         = @g_name[1]
       .content-player__name__point1
         - @points.each do |point|
           -if point.user.name == @g_name[1]
-            %li.point
+            %li.point1{data: {point1: @p_id1, user_id: @user1_id}}
               = point.point
       %ul.content-player__name__result1
         result:
         %li.content-player__name__result__1
           = @res2
-    .content-player__name2
+    .content-player__name2{data: {user_name: @g_name[2]}}
       .content-player__name__box
         = @g_name[2]
       .content-player__name__point2
         - @points.each do |point|
           -if point.user.name == @g_name[2] 
-            %li.point
+            %li.point2{data: {point2: @p_id2, user_id: @user2_id}}
               = point.point
       %ul.content-player__name__result2
         result:
         %li.content-player__name__result__2
           = @res3
-    .content-player__name3
+    .content-player__name3{data: {user_name: @g_name[3]}}
       .content-player__name__box
         = @g_name[3]
       .content-player__name__point3
         - @points.each do |point|
           -if point.user.name == @g_name[3]
-            %li.point
+            %li.point3{data: {point3: @p_id3, user_id: @user3_id}}
               = point.point
       %ul.content-player__name__result3
         result:
