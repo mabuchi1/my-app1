@@ -1,5 +1,5 @@
 class Result < ApplicationRecord
-  belongs_to :group, through: :group_user
+  belongs_to :group
   belongs_to :user
   has_many :point
 
