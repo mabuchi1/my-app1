@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
     if @group.user_ids.length <= 4 && @group.save
         redirect_to root_path, notice: 'グループを作成しました'
       else
-      redirect_to new_group_path, notice: 'グループは4人以下にしてください'
+      redirect_to new_group_path, notice: '名前の入力・また4人以下にしてください'
     end
   end
 

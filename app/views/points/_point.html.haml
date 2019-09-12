@@ -15,7 +15,7 @@
             %li.point{data: {point: @p_id, user_id: @user_id}}
               = point.point
       %ul.content-player__name__result
-        result:
+        合計点:
         %li.content-player__name__result__0
           = @res1
     .content-player__name1{data: {user_name: @g_name[1]}}
@@ -27,7 +27,7 @@
             %li.point1{data: {point1: @p_id1, user_id: @user1_id}}
               = point.point
       %ul.content-player__name__result1
-        result:
+        合計点:
         %li.content-player__name__result__1
           = @res2
     .content-player__name2{data: {user_name: @g_name[2]}}
@@ -39,7 +39,7 @@
             %li.point2{data: {point2: @p_id2, user_id: @user2_id}}
               = point.point
       %ul.content-player__name__result2
-        result:
+        合計点:
         %li.content-player__name__result__2
           = @res3
     .content-player__name3{data: {user_name: @g_name[3]}}
@@ -51,13 +51,13 @@
             %li.point3{data: {point3: @p_id3, user_id: @user3_id}}
               = point.point
       %ul.content-player__name__result3
-        result:
+        合計点:
         %li.content-player__name__result__3
           = @res4
 -@rank.sort!
 .contenta
   %li.contenta-a1
-    rank:
+    順位:
     .content-player__name__result__1a
       - if (@rank[3] == @res1 && @flag == 0)
         = @one
@@ -71,7 +71,7 @@
       - if (@rank[0] == @res1 && @flag == 0)
         = @four
   %li.contenta-a2
-    rank:
+    順位:
     .content-player__name__result__1b
       - @flag = 0
       - if (@rank[3] == @res2 && @flag == 0)
@@ -86,7 +86,7 @@
       - if (@rank[0] == @res2 && @flag == 0)
         = @four
   %li.contenta-a3
-    rank:
+    順位:
     .content-player__name__result__1c
       - @flag = 0
       - if (@rank[3] == @res3 && @flag == 0)
@@ -101,7 +101,7 @@
       - if (@rank[0] == @res3 && @flag == 0)
         = @four
   %li.contenta-a4
-    rank:
+    順位:
     .content-player__name__result__1d
       - @flag = 0
       - if (@rank[3] == @res4 && @flag == 0)
