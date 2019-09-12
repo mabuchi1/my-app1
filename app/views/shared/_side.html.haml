@@ -10,9 +10,9 @@
       = link_to new_group_path do
         グループ作成
 .groups
-  - current_user.groups.each do |group|
-    .group
-      グループ一覧
-      = link_to group_points_path(group) do
-        .group__name
-          = group.name
+  グループ一覧
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_points_path(group) do
+          .group__name
+            = group.name
