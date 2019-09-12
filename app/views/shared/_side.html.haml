@@ -5,13 +5,14 @@
   %ul.header--btn
     %li{class: "header--btn__log"}
       = link_to destroy_user_session_path, method: :delete do
-        Log_out
+        ログアウト
     %li.header--btn__create
       = link_to new_group_path do
-        Group_create
+        グループ作成
 .groups
   - current_user.groups.each do |group|
-    .group 
+    .group
+      グループ一覧
       = link_to group_points_path(group) do
         .group__name
           = group.name
