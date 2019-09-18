@@ -1,24 +1,8 @@
-# README
+#アプリケーション概要
+最大4人までのグループを作成する。計算機能を用いて現在の個人得点・順位を管理するアプリケーション
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#アプリケーション機能一覧
+gem 'devise'を用いたユーザー登録機能
+計算機ビューに作成し、それを利用した得点計算と現在のグループ内の順位を表示する
+JSによる非同期通信機能と自動更新機能を実装
+DBにローカルではmySQLを、デプロイ時にはgem pgを利用してPostgreSQLを利用してHerokuへデプロイ
